@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rayala Kavya Portfolio</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+            color: #2f3e46;
+            line-height: 1.6;
+        }
+        header {
+            background: #ffffff;
+            padding: 20px 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            flex-wrap: wrap;
+        }
+        header h1 {
+            font-weight: 700;
+            font-size: 2rem;
+            color: #1d3557;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: #457b9d;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+        nav a:hover,
+        nav a.active {
+            background: #457b9d;
+            color: #ffffff;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        section.active {
+            display: block;
+        }
+
+        h2 {
+            font-weight: 700;
+            color: #1d3557;
+            margin-bottom: 20px;
+            border-left: 4px solid #457b9d;
+            padding-left: 12px;
+        }
+
+        #about {
+            text-align: center;
+        }
+        #about img.profile {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+        }
+        #about p {
+            font-size: 1.1rem;
+            color: #495057;
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            font-size: 1rem;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+            color: #495057;
+        }
+        ul li strong {
+            color: #1d3557;
+        }
+
+        #ml-output {
+            margin-top: 15px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 700px;
+        }
+        #ml-output h3 {
+            color: #1d3557;
+            margin-bottom: 10px;
+        }
+        #ml-output table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #ml-output table thead tr {
+            background: #457b9d;
+            color: #fff;
+        }
+        #ml-output table th, 
+        #ml-output table td {
+            padding: 8px;
+            text-align: left;
+        }
+        #ml-output table tbody tr {
+            border-bottom: 1px solid #ddd;
+        }
+        #ml-output img {
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        a.link {
+            color: #457b9d;
+            text-decoration: none;
+        }
+        a.link:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            main {
+                margin: 30px 15px;
+                padding: 30px 20px;
+            }
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Rayala Kavya</h1>
+    <nav>
+        <a class="active" onclick="showSection('about', event)">About</a>
+        <a onclick="showSection('education', event)">Education</a>
+        <a onclick="showSection('certificates', event)">Certificates</a>
+        <a onclick="showSection('projects', event)">Projects</a>
+        <a onclick="showSection('contact', event)">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section id="about" class="active">
+        <img src="My Image.jpg" alt="My Photo" class="profile" />
+        <h2>About Me</h2>
+        <p>
+            I'm a passionate B.Tech student specializing in Computer Science with AI & Machine Learning at VVITU.
+            I am a beginner learning coding with Python and have foundational knowledge of SQL and Full Stack Development (FSD).
+            I'm eager to grow my skills and work on exciting projects as I continue my learning journey.
+        </p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li><strong>SSC</strong> – Sri Vidya High School (2021)</li>
+            <li><strong>Intermediate (MPC)</strong> – Sri Akshara Junior College (2021–2023)</li>
+            <li><strong>B.Tech (AI & ML)</strong> – VVITU (2023–2027)</li>
+        </ul>
+    </section>
+
+    <section id="certificates">
+        <h2>Certificates</h2>
+        <ul>
+            <li><strong>CS50 Python Certificate</strong> – <a href="file:///C:/Users/rayal/HTML%20Programs/Website/EdX%20CS50%20Python%20Course%20Certificate.pdf" class="link">View Certificate</a></li>
+            <li><strong>L4G Certificate</strong> – <a href="file:///C:/Users/rayal/HTML%20Programs/Website/L4G.pdf" class="link">View Certificate</a></li>
+            <li><strong>GUVI Generative AI</strong> – <a href="GuviCertification.png" class="link">View Certificate</a></li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <ul>
+            <li>
+                <strong>Python Flask News Application</strong> – A web app that fetches and displays live news using Flask and Python.
+                <br>
+                <a href="news_app.html" target="_blank" class="link">View Output</a><br>
+				<a href="https://www.geeksforgeeks.org/flask-news-application-using-newsapi/" target="_blank" class="link">Project Explanation</a>
+            </li>
+            <li>
+                <strong>ML House Price Prediction</strong> – A machine learning model that predicts house prices based on input features.
+                <br>
+                <a href="#" class="link" onclick="toggleMlOutput(event)">View Output</a>
+
+                <div id="ml-output" style="display:none;">
+                    <h3>Model Evaluation Metrics</h3>
+                    <p><strong>Mean Squared Error:</strong> 2,848,523,443.42</p>
+                    <p><strong>R<sup>2</sup> Score:</strong> 0.6286</p>
+
+                    <h3>Model Coefficients</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Coefficient</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>GrLivArea</td><td>100.64</td></tr>
+                            <tr><td>BedroomAbvGr</td><td>-26,645.53</td></tr>
+                            <tr><td>TotalBath</td><td>27,083.21</td></tr>
+                        </tbody>
+                    </table>
+
+                    <img src="static/houseprice.jpg" alt="Actual vs Predicted Sale Prices">
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:rayalakavya2004@gmail.com" class="link">rayalakavya2004@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/rayala-kavya-b35198285" target="_blank" class="link">rayala-kavya-b35198285</a></p>
+        <p>GitHub: <a href="https://github.com/rayalakavya" target="_blank" class="link">rayalakavya</a></p>
+    </section>
+</main>
+
+<footer>
+    &copy; 2025 Rayala Kavya — All rights reserved
+</footer>
+
+<script>
+    const navLinks = document.querySelectorAll('nav a');
+    function showSection(sectionId, event) {
+        document.querySelectorAll('main section').forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+
+        navLinks.forEach(link => link.classList.remove('active'));
+        event.target.classList.add('active');
+    }
+
+    function toggleMlOutput(event) {
+        event.preventDefault();
+        const mlOutput = document.getElementById('ml-output');
+        if (mlOutput.style.display === 'none' || mlOutput.style.display === '') {
+            mlOutput.style.display = 'block';
+            event.target.textContent = 'Hide Output';
+        } else {
+            mlOutput.style.display = 'none';
+            event.target.textContent = 'View Output';
+        }
+    }
+</script>
+
+</body>
+</html>
